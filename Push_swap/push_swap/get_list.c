@@ -25,8 +25,6 @@ static t_flist *ft_create_list(char *str, char num)
     begin = (t_flist*)malloc(sizeof(t_flist));
     if (num == 'a')
         begin->number = ft_atoi(str);
-    if (num == 'b')
-        begin->number = 0;
     return (begin);
 }
 

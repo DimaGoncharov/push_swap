@@ -17,7 +17,8 @@ void    ft_check_sort(int number, t_flist **mas)
     t_flist *start;
 
     i = 1;
-    j = 0;
+    j = 1;
+    start= (t_flist*)malloc(sizeof(t_flist));
     start->number = (*mas)->number;
     start->next = NULL;
     while (j < number)
@@ -28,7 +29,7 @@ void    ft_check_sort(int number, t_flist **mas)
             new = (*mas)->next;
              if (ft_check_int(mas, new) > 0)
              {
-                 start = ft_swap_a(mas, new, start, i);
+                 start = ft_swap(mas, new, start, i);
              }
             else if (i == 1)
                 start->next = (*mas)->next;
@@ -40,7 +41,7 @@ void    ft_check_sort(int number, t_flist **mas)
     }
 }
 
-t_flist    *ft_swap_a(t_flist **first, t_flist *new, t_flist *start, int i)
+t_flist    *ft_swap(t_flist **first, t_flist *new, t_flist *start, int i)
 {
     t_flist *final;
     t_flist *new2;
@@ -68,3 +69,30 @@ t_flist    *ft_swap_a(t_flist **first, t_flist *new, t_flist *start, int i)
         start = *first;
     return (start);
 }   
+
+void    ft_push_back(t_flist **first, t_flist **second)
+{
+    t_flist *other;
+
+    other = (t_flist*)malloc(sizeof(t_flist));
+    other->number = (*first)->number;
+    other->next = *second;
+    *second = other;
+    *first = (*first)->next;
+}
+
+void    ft_rotate(t_flist **first)
+{
+    t_flist *one;
+    t_flist *final;
+
+    one = *first;
+    final = *first;
+    *first = (*first)->next;
+    while (final->next)
+    {
+        final = final->next;
+    }
+    final->next = one;
+    one->next = NULL;
+}
