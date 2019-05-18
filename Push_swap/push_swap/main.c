@@ -6,6 +6,11 @@ void    ft_print_list(t_flist *first, t_flist *second)
     {
         if(first)
             ft_putnbr(first->number);
+        else 
+            {
+                ft_putchar(' ');
+                ft_putchar(' ');
+            }
         ft_putchar(' ');
         if(second)
             ft_putnbr(second->number);
@@ -29,13 +34,22 @@ int main(int ac, char **av)
     first_b = (t_flist*)malloc(sizeof(t_flist));
     first_b->next = NULL;
     //first_b = get_list(av, ac, b);
+    
+    //ft_swap(&first_a, first_a->next, first_a, 0); /* Function swap */
     //ft_push_back(&first_a, &first_b); /* Push b /Push a  в Данном случае из стека a в стек b*/
-    //ft_swap(&first_a, first_a->next, first_b, 0); /* Function swap */
-    //ft_check_sort(ac - 1, &first_a); /* Сортировка пузырьком стандартная */
+    
+    ft_check_sort(ac - 1, &first_a); /* Сортировка пузырьком стандартная */
+    ft_push_back(&first_a, &first_b); /* Push b /Push a  в Данном случае из стека a в стек b*/
+   // ft_push_back(&first_a, &first_b); /* Push b /Push a  в Данном случае из стека a в стек b*/
+    //ft_push_back(&first_a, &first_b);
+    //ft_push_back(&first_a, &first_b);
+    //ft_push_back(&first_a, &first_b);
+    //ft_reverse_rotate(&first_a);
     //ft_list_reverse(&first_a); /* Реверс лист Reverse rotate */
     //ft_rotate(&first_a); /* Function rotate */
-    ft_swap(&first_a, first_a->next, first_b, 0);
-    ft_push_back(&first_a, &first_b);
+    //ft_rotate(&first_b);
+    //ft_swap(&first_a, first_a->next, first_b, 0);
+    //ft_push_back(&first_a, &first_b);
     ft_print_list(first_a, first_b); /* распечатка обоих листов*/
     
     //ft_print_list(first_a);

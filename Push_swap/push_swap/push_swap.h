@@ -22,5 +22,6 @@ void ft_list_reverse(t_flist **begin_list);
 void    ft_check_sort(int number, t_flist **mas);
 void    ft_push_back(t_flist **first, t_flist **second);
 void    ft_rotate(t_flist **first);
+void    ft_reverse_rotate(t_flist **first);
 
 #endif

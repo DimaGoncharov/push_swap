@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Users/ptorchbu/Desktop/Push_swap/a.out",
-            "args": ["1", "2", "3"],
+            "args": ["1", "2", "3", "4"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

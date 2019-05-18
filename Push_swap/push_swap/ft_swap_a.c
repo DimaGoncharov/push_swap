@@ -80,6 +80,51 @@ void    ft_push_back(t_flist **first, t_flist **second)
     *second = other;
     *first = (*first)->next;
 }
+int		ft_list_size(t_flist *begin_list)
+{
+	int		i;
+
+	i = 0;
+	while (begin_list)
+	{
+		begin_list = begin_list->next;
+		++i;
+	}
+	return (i);
+}
+void    ft_reverse_rotate(t_flist **first)
+{
+    t_flist *one;
+    t_flist *final;
+    t_flist *second;
+    
+    int j;
+
+    one = *first;
+    final = *first;
+
+    j = ft_list_size(one);
+
+
+    while (final->next)
+    {
+        final = final->next;
+    }
+    second = final;
+    final->next = one;
+    while (j > 0)
+    {
+        if (j - 1 == 0)
+            {
+                final->next = NULL;
+                break;
+            }
+        final = final->next;
+        j--;
+    }
+    *first = second;
+    
+}
 
 void    ft_rotate(t_flist **first)
 {
