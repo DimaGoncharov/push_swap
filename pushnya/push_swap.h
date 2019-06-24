@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/24 19:36:33 by ptorchbu          #+#    #+#             */
+/*   Updated: 2019/06/24 19:38:15 by ptorchbu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define BUFF_SIZE 1024
@@ -29,8 +41,8 @@ typedef struct	s_swap
 	int			rra;
 	int			rrb;
 	int			rrr;
-}                 t_swap;
- 
+}				t_swap;
+
 int				ft_max(t_push *push);
 int				ft_min(t_push *push);
 int				checker(t_push *push);
